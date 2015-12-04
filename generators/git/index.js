@@ -70,7 +70,8 @@ module.exports = generators.Base.extend({
 
   end: function () {
     this.spawnCommandSync('git', ['init'], {
-      cwd: this.destinationPath(this.options.generateInto)
+      cwd: this.destinationPath(this.options.generateInto),
+      stdio: [null, null, null]
     });
 
     if (!this.originUrl) {
